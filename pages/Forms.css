@@ -1,7 +1,10 @@
     #MyValidateForm{
-      width: 350px;
+        text-align: center;
+      /* width: 350px; */
       display: flex;
       flex-direction: column;
+      -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
     }
 
     #MyValidateForm input{

@@ -1,7 +1,7 @@
 window.onload = function(){
     
 };
-    var storageIndex = 0;
+    //Переписать на своем валидаторе
 
     var loginbtn = document.querySelector('#login');
     loginbtn.addEventListener('click' , onSubmit);
@@ -13,12 +13,8 @@ window.onload = function(){
 
     function loggin(){
         var email = document.querySelector('#email');
-        if(email.value !=="" && email.value!==null && email.value!==undefined){
-            storageIndex++;
-            localStorage.setItem('e-mail'+storageIndex, email.value);
-            logg(localStorage);
-            logg(storageIndex);
-        };
+        var name = localStorage.getItem(email.value);
+        logg(name)
     };
     function logg(t){
         console.log(t);

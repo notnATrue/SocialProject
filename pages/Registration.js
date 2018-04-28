@@ -2,7 +2,10 @@
 var registration = document.querySelector('#registration');
 registration.addEventListener('click' , startValid);
  
- 
+
+
+
+
  function startValid(){
     
     var loginform = document.getElementById('MyValidateForm');
@@ -10,7 +13,7 @@ registration.addEventListener('click' , startValid);
     
    
     var submit = document.getElementById('submit');
-    //submit.setAttribute('disabled', 'true');
+    submit.setAttribute('disabled', 'true');
     
     var box = document.getElementById('agree');
     box.addEventListener('change' , function(){
@@ -59,7 +62,7 @@ registration.addEventListener('click' , startValid);
       forms.defColor();
       if(forms.name.value === "" || forms.pas1.value === "" || forms.pas2.value === ""){
         array.forEach(function(x){
-          if(x.value===""){
+          if(x.value===""&& x!== submit){
             forms.red(x);
           }
         });
@@ -87,11 +90,17 @@ registration.addEventListener('click' , startValid);
       console.error(e);
     } 
     function loggedIn(){
-
+        createUser();
       console.log('Welcome ' + forms.name.value);
     }
     setdefault();
     // random();
     }
     submit.addEventListener('click' , validation);
+    
+    function createUser(){
+        localStorage.setItem('e-mail', forms.name.value);
+        localStorage.setItem('pass' , forms.pas1.value);
+        logg(localStorage);
+    }
   }
