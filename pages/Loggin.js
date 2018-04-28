@@ -1,20 +1,27 @@
 window.onload = function(){
-    var slider = document.querySelector(".card.mb-3.fixed-bottom.bg-dark");
     
-    var loginbtn = document.querySelector('.btn.btn-outline-primary');
-    loginbtn.addEventListener('click' , loggin);
+};
+    var storageIndex = 0;
 
-    var signbtn = document.querySelector('#submitlog');
-    signbtn.addEventListener('click', loggin);
-    //
-    var inout = document.querySelector('.input');
-    console.log()
-    function loggin(event){
-        logg(event.target);
+    var loginbtn = document.querySelector('#login');
+    loginbtn.addEventListener('click' , onSubmit);
+    
+    function onSubmit(){
+        let submit = document.querySelector('#login-submit-reg');
+        submit.addEventListener('click', loggin);
     };
 
+    function loggin(){
+        var email = document.querySelector('#email');
+        if(email.value !=="" && email.value!==null && email.value!==undefined){
+            storageIndex++;
+            localStorage.setItem('e-mail'+storageIndex, email.value);
+            logg(localStorage);
+            logg(storageIndex);
+        };
+    };
     function logg(t){
         console.log(t);
     };
-};
 
+    
