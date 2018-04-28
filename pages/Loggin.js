@@ -6,7 +6,9 @@ window.onload = function(){
 
     var signbtn = document.querySelector('#submitlog');
     signbtn.addEventListener('click', loggin);
-
+    //
+    var inout = document.querySelector('.input');
+    console.log()
     function loggin(event){
         logg(event.target);
     };
