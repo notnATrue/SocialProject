@@ -99,8 +99,12 @@ registration.addEventListener('click' , startValid);
     submit.addEventListener('click' , validation);
     
     function createUser(){
-        localStorage.setItem('e-mail', forms.name.value);
-        localStorage.setItem('pass' , forms.pas1.value);
+        document.cookie = "username"+forms.name.value+';';
+        document.cookie = "token="+forms.pas1.value+'['+forms.pas1.value+']';
+        localStorage.setItem('e-mail', encodeURIComponent(forms.name.value));
+        localStorage.setItem('pass' , encodeURIComponent(forms.pas1.value));
         logg(localStorage);
-    }
+        logg(document.cookie);
+    };
+    
   }
