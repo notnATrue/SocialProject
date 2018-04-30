@@ -1,6 +1,4 @@
-window.onload = function(){
-    
-};
+
     //Переписать на своем валидаторе
 
     var loginbtn = document.querySelector('#login');
